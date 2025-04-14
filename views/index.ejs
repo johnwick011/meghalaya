@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available PDFs</title>
+</head>
+<body>
+  <h1>Available PDFs</h1>
+  <ul>
+    <% files.forEach(file => { %>
+      <li>
+        <a href="<%= file.path %>" download><%= file.name %></a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

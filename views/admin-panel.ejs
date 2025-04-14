@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h1>Welcome to the Admin Panel</h1>
+
+  <form method="POST" action="/upload" enctype="multipart/form-data">
+    <label for="pdf">Select PDF:</label>
+    <input type="file" name="pdf" id="pdf" accept="application/pdf" required>
+    <br>
+    <label for="newFileName">Rename the PDF (without extension):</label>
+    <input type="text" name="newFileName" id="newFileName" required>
+    <br>
+    <button type="submit">Upload</button>
+  </form>
+
+  <% if (uploadError) { %>
+    <p style="color: red;"><%= uploadError %></p>
+  <% } %>
+
+  <a href="/logout">Logout</a>
+</body>
+</html>
